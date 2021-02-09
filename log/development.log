@@ -1,0 +1,99 @@
+  [1m[35m (170.9ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.0ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFornecedors (20210209025323)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFornecedors (20210209025323)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "fornecedors" ("id" bigserial primary key, "nome" character varying, "nome_fantasia" character varying, "cnpj" character varying, "cep" character varying, "estado" character varying, "cidade" character varying, "bairro" character varying, "endereco" character varying, "numero" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210209025323"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-09 02:55:29.543884"], ["updated_at", "2021-02-09 02:55:29.543884"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-09 02:56:43.059904"], ["updated_at", "2021-02-09 02:56:43.059904"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/fornecedors" for ::1 at 2021-02-08 23:59:18 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.7ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 17.1ms | ActiveRecord: 5.1ms | Allocations: 10156)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-08 23:59:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fornecedors" for ::1 at 2021-02-08 23:59:39 -0300
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Load (0.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Update (5.7ms)[0m  [1m[33mUPDATE "fornecedors" SET "nome" = $1, "updated_at" = $2 WHERE "fornecedors"."id" = $3[0m  [["nome", "Guilherme"], ["updated_at", "2021-02-09 03:01:24.785509"], ["id", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:10:in `index'
+Completed 200 OK in 112395ms (Views: 1.6ms | ActiveRecord: 11.1ms | Allocations: 98166)
+
+
+Started GET "/fornecedors/1" for ::1 at 2021-02-09 00:02:01 -0300
+Processing by FornecedorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" WHERE "fornecedors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fornecedors_controller.rb:46:in `set_fornecedor'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 985)
+
+
+Started GET "/fornecedors" for ::1 at 2021-02-09 00:02:09 -0300
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.5ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:10:in `index'
+Completed 200 OK in 6080ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 3092)
+
+
