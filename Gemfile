@@ -39,3 +39,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'rswag'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rswag-specs'
+end
+
+gem 'rack-cors'

@@ -1,0 +1,23 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/fornecedors":
+    get:
+      summary: Get all Fornecedor
+      tags:
+      - Fornecedor
+      responses:
+        '200':
+          description: Fornecedor OK
+servers:
+- url: https://{prodHost}
+  variables:
+    prodHost:
+      default: easylistonrails.herokuapp.com/
+- url: http://{devHost}
+  variables:
+    devHost:
+      default: localhost:3000
