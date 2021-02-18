@@ -10,6 +10,8 @@
     * "Instala" as alteracoes no banco de dados
   * ```rake db:seed```
     * executa o comando no arquivo db/seed.rb
+  * ```rake db:rollback STEP=1```
+    * Rollback  da migrations parametros da migration
 
 
 
@@ -31,4 +33,12 @@
   * models so na pasta models
   * database.yml guarda conexao do banco
   * routes.rb guarda as rotas do sistema
-  * 
+  
+## debug 
+* byebug
+
+## put 'ddddd ' Print um linha
+## puts ' dddddd' Println um linha \n
+
+## aumentar resolução via terminal 
+* ```xrandr -s 16```
