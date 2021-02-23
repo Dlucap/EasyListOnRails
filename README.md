@@ -14,7 +14,6 @@
     * Rollback  da migrations parametros da migration
 
 
-
 * Comandos rails
   * ```rails console``` ou ```rails c``` 
     * abre o console para comandos rails...

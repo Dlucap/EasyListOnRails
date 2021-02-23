@@ -4,6 +4,48 @@ info:
   title: API V1
   version: v1
 paths:
+  "/compras":
+    get:
+      summary: Get all Compras
+      tags:
+      - Compras
+      responses:
+        '200':
+          description: Compras OK
+    post:
+      summary: Create Compras
+      tags:
+      - Compras
+      responses:
+        '201':
+          description: Compras OK
+  "/compras/{id}":
+    get:
+      summary: Get Compras
+      tags:
+      - Compras
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Compras OK
+    delete:
+      summary: Delete Compras
+      tags:
+      - Compras
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Delete Compras OK
   "/fornecedors":
     get:
       summary: Get all Fornecedor
@@ -12,6 +54,150 @@ paths:
       responses:
         '200':
           description: Fornecedor OK
+    post:
+      summary: Create Fornecedor
+      tags:
+      - Fornecedor
+      parameters: []
+      responses:
+        '201':
+          description: Fornecedor OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: supermercado
+                nome_fantasia:
+                  type: string
+                  example: supermercado fantasia
+                cnpj:
+                  type: string
+                  example: 00.000.000/0000-00
+                cep:
+                  type: string
+                  example: 00.000-000
+                estado:
+                  type: string
+                  example: MG
+                cidade:
+                  type: string
+                  example: Belo horizonte
+                bairro:
+                  type: string
+                  example: castelo
+                endereco:
+                  type: string
+                  example: Rua do bobo
+                numero:
+                  type: integer
+                  example: 0
+  "/fornecedors/{id}":
+    get:
+      summary: Get Fornecedor
+      tags:
+      - Fornecedor
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Fornecedor OK
+    delete:
+      summary: Delete Fornecedor
+      tags:
+      - Fornecedor
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Delete Fornecedor OK
+  "/produtos":
+    get:
+      summary: Get all Produtos
+      tags:
+      - Produtos
+      responses:
+        '200':
+          description: Produtos OK
+    post:
+      summary: Create Produtos
+      tags:
+      - Produtos
+      parameters: []
+      responses:
+        '201':
+          description: Produto OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: supermercado
+                nome_fantasia:
+                  type: string
+                  example: supermercado fantasia
+                cnpj:
+                  type: string
+                  example: 00.000.000/0000-00
+                cep:
+                  type: string
+                  example: 00.000-000
+                estado:
+                  type: string
+                  example: MG
+                cidade:
+                  type: string
+                  example: Belo horizonte
+                bairro:
+                  type: string
+                  example: castelo
+                endereco:
+                  type: string
+                  example: Rua do bobo
+                numero:
+                  type: integer
+                  example: 0
+  "/produtos/{id}":
+    get:
+      summary: Get Produtos
+      tags:
+      - Produtos
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Produto OK
+    delete:
+      summary: Delete Produto
+      tags:
+      - Produtos
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Delete Produto OK
 servers:
 - url: https://{prodHost}
   variables:
