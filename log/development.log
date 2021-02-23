@@ -1,0 +1,1393 @@
+  [1m[35m (170.9ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.0ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFornecedors (20210209025323)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFornecedors (20210209025323)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "fornecedors" ("id" bigserial primary key, "nome" character varying, "nome_fantasia" character varying, "cnpj" character varying, "cep" character varying, "estado" character varying, "cidade" character varying, "bairro" character varying, "endereco" character varying, "numero" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210209025323"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-09 02:55:29.543884"], ["updated_at", "2021-02-09 02:55:29.543884"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-09 02:56:43.059904"], ["updated_at", "2021-02-09 02:56:43.059904"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/fornecedors" for ::1 at 2021-02-08 23:59:18 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.7ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 17.1ms | ActiveRecord: 5.1ms | Allocations: 10156)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-08 23:59:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/fornecedors" for ::1 at 2021-02-08 23:59:39 -0300
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Load (0.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[36mCACHE Fornecedor Load (0.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Update (5.7ms)[0m  [1m[33mUPDATE "fornecedors" SET "nome" = $1, "updated_at" = $2 WHERE "fornecedors"."id" = $3[0m  [["nome", "Guilherme"], ["updated_at", "2021-02-09 03:01:24.785509"], ["id", 1]]
+  ↳ (byebug):1:in `index'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `index'
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:10:in `index'
+Completed 200 OK in 112395ms (Views: 1.6ms | ActiveRecord: 11.1ms | Allocations: 98166)
+
+
+Started GET "/fornecedors/1" for ::1 at 2021-02-09 00:02:01 -0300
+Processing by FornecedorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" WHERE "fornecedors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fornecedors_controller.rb:46:in `set_fornecedor'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 985)
+
+
+Started GET "/fornecedors" for ::1 at 2021-02-09 00:02:09 -0300
+Processing by FornecedorsController#index as HTML
+  [1m[36mFornecedor Load (0.5ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:10:in `index'
+Completed 200 OK in 6080ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 3092)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-12 21:52:40 -0300
+  
+PG::ConnectionBad (FATAL:  role "daniel" does not exist
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 21:52:43 -0300
+  
+PG::ConnectionBad (FATAL:  role "daniel" does not exist
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 21:52:55 -0300
+  
+PG::ConnectionBad (FATAL:  role "daniel" does not exist
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 21:52:57 -0300
+  
+PG::ConnectionBad (FATAL:  role "daniel" does not exist
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:04:44 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 22:04:46 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:06:21 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:06:29 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:13:38 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 22:13:39 -0300
+  
+PG::ConnectionBad (FATAL:  Peer authentication failed for user "postgres"
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:46:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:16:53 -0300
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "EasyListOnRails_development" does not exist
+):
+  
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:50:in `rescue in postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:33:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 22:16:55 -0300
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "EasyListOnRails_development" does not exist
+):
+  
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:50:in `rescue in postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/postgresql_adapter.rb:33:in `postgresql_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.5) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.5) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (772.0ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_development" ENCODING = 'unicode'[0m
+  [1m[35m (394.6ms)[0m  [1m[35mCREATE DATABASE "EasyListOnRails_test" ENCODING = 'unicode'[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFornecedors (20210209025323)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "fornecedors" ("id" bigserial primary key, "nome" character varying, "nome_fantasia" character varying, "cnpj" character varying, "cep" character varying, "estado" character varying, "cidade" character varying, "bairro" character varying, "endereco" character varying, "numero" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210209025323"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-13 01:30:30.311289"], ["updated_at", "2021-02-13 01:30:30.311289"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 01:31:08.218662"], ["updated_at", "2021-02-13 01:31:08.218662"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:31:39 -0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/api-docs
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 153)
+
+
+Started GET "/api-docs" for 127.0.0.1 at 2021-02-12 22:31:39 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-12 22:31:39 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-12 22:31:40 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-12 22:31:40 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-12 22:31:40 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-12 22:31:41 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-12 22:31:41 -0300
+Started GET "/fornecedors" for 127.0.0.1 at 2021-02-12 22:32:35 -0300
+Processing by FornecedorsController#index as */*
+  [1m[36mFornecedor Load (24.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+Completed 200 OK in 547ms (Views: 441.9ms | ActiveRecord: 89.6ms | Allocations: 8476)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-12 22:35:47 -0300
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/api-docs
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 82)
+
+
+Started GET "/api-docs" for 127.0.0.1 at 2021-02-12 22:35:47 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-12 22:35:47 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-12 22:35:48 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-12 22:35:48 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-12 22:35:48 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-12 22:35:49 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-12 22:35:50 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProdutos (20210213015923)
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCREATE TABLE "produtos" ("id" bigserial primary key, "marca" character varying, "nome" character varying, "descricao" text, "preco" decimal, "quantidade" integer, "quantidade_estoque" integer, "validade" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210213015923"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/Produtors" for 127.0.0.1 at 2021-02-12 23:06:47 -0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/Produtors"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-12 23:06:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/Produtos" for 127.0.0.1 at 2021-02-12 23:08:06 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Produtos"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/produtos" for 127.0.0.1 at 2021-02-12 23:08:43 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (35.5ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/controllers/produtos_controller.rb:8:in `index'
+Completed 200 OK in 133ms (Views: 63.6ms | ActiveRecord: 54.4ms | Allocations: 2074)
+
+
+Started GET "/produtos/1" for 127.0.0.1 at 2021-02-12 23:09:05 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (2.6ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:44:in `set_produto'
+Completed 404 Not Found in 172ms (ActiveRecord: 97.4ms | Allocations: 1174)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Produto with 'id'=1):
+  
+app/controllers/produtos_controller.rb:44:in `set_produto'
+Started GET "/produtos" for 127.0.0.1 at 2021-02-12 23:09:53 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (5.9ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/controllers/produtos_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 20.1ms | ActiveRecord: 5.9ms | Allocations: 857)
+
+
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:11:43.999091"], ["updated_at", "2021-02-13 02:11:43.999091"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:13:38.622576"], ["updated_at", "2021-02-13 02:13:38.622576"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.2ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:14:16.370547"], ["updated_at", "2021-02-13 02:14:16.370547"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (5.6ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:15:35.645952"], ["updated_at", "2021-02-13 02:15:35.645952"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (2.7ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-13 02:15:35.821220"], ["updated_at", "2021-02-13 02:15:35.821220"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/produtos" for 127.0.0.1 at 2021-02-12 23:16:11 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (6.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/controllers/produtos_controller.rb:8:in `index'
+Completed 200 OK in 154ms (Views: 146.6ms | ActiveRecord: 6.2ms | Allocations: 6275)
+
+
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (2.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (1.7ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 1]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (0.7ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (0.8ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 3]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (0.9ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.2ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 5]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.4ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:34:45.072703"], ["updated_at", "2021-02-13 02:34:45.072703"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (3.8ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (2.1ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 1]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (2.8ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-13 02:35:21.691234"], ["updated_at", "2021-02-13 02:35:21.691234"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (2.7ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (3.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (1.7ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 6]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.6ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Daniel"], ["created_at", "2021-02-13 02:38:26.928135"], ["updated_at", "2021-02-13 02:38:26.928135"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (12.0ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (18.6ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 2]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (4.3ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-13 02:38:36.265537"], ["updated_at", "2021-02-13 02:38:36.265537"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (150.7ms)[0m  [1m[35mCREATE TABLE "compras" ("id" bigserial primary key, "fornecedor_id" bigint NOT NULL, "produto_id" bigint NOT NULL, "data_compra" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9b2e15dbf5"
+FOREIGN KEY ("fornecedor_id")
+  REFERENCES "fornecedors" ("id")
+, CONSTRAINT "fk_rails_d9032475c0"
+FOREIGN KEY ("produto_id")
+  REFERENCES "produtos" ("id")
+)[0m
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE  INDEX  "index_compras_on_fornecedor_id" ON "compras"  ("fornecedor_id")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE  INDEX  "index_compras_on_produto_id" ON "compras"  ("produto_id")[0m
+  [1m[36mprimary::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210217223952"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (16.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.6ms)[0m  [1m[35mDROP TABLE "compras"[0m
+  [1m[36mprimary::SchemaMigration Destroy (3.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210217223952"]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (142.5ms)[0m  [1m[35mCREATE TABLE "compras" ("id" bigserial primary key, "fornecedor_id" bigint NOT NULL, "data_compra" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9b2e15dbf5"
+FOREIGN KEY ("fornecedor_id")
+  REFERENCES "fornecedors" ("id")
+)[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE  INDEX  "index_compras_on_fornecedor_id" ON "compras"  ("fornecedor_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210217223952"]]
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItemCompras (20210217225000)
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (220.5ms)[0m  [1m[35mCREATE TABLE "item_compras" ("id" bigserial primary key, "compra_id" bigint NOT NULL, "produto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e7b5765bb6"
+FOREIGN KEY ("compra_id")
+  REFERENCES "compras" ("id")
+, CONSTRAINT "fk_rails_74ae12447c"
+FOREIGN KEY ("produto_id")
+  REFERENCES "produtos" ("id")
+)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE  INDEX  "index_item_compras_on_compra_id" ON "item_compras"  ("compra_id")[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX  "index_item_compras_on_produto_id" ON "item_compras"  ("produto_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210217225000"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItemCompras (20210217225000)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.4ms)[0m  [1m[35mDROP TABLE "item_compras"[0m
+  [1m[36mprimary::SchemaMigration Destroy (2.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210217225000"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mDROP TABLE "compras"[0m
+  [1m[36mprimary::SchemaMigration Destroy (5.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210217223952"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (7.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (80.6ms)[0m  [1m[35mCREATE TABLE "compras" ("id" bigserial primary key, "fornecedor_id" bigint NOT NULL, "item_compra_id" bigint NOT NULL, "data_compra" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9b2e15dbf5"
+FOREIGN KEY ("fornecedor_id")
+  REFERENCES "fornecedors" ("id")
+, CONSTRAINT "fk_rails_a489faaa5b"
+FOREIGN KEY ("item_compra_id")
+  REFERENCES "item_compras" ("id")
+)[0m
+  [1m[35m (3.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2042325544278384540)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompras (20210217223952)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "compras" ("id" bigserial primary key, "fornecedor_id" bigint NOT NULL, "data_compra" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9b2e15dbf5"
+FOREIGN KEY ("fornecedor_id")
+  REFERENCES "fornecedors" ("id")
+)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX  "index_compras_on_fornecedor_id" ON "compras"  ("fornecedor_id")[0m
+  [1m[36mprimary::SchemaMigration Create (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210217223952"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItemCompras (20210217225000)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.0ms)[0m  [1m[35mCREATE TABLE "item_compras" ("id" bigserial primary key, "compra_id" bigint NOT NULL, "produto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e7b5765bb6"
+FOREIGN KEY ("compra_id")
+  REFERENCES "compras" ("id")
+, CONSTRAINT "fk_rails_74ae12447c"
+FOREIGN KEY ("produto_id")
+  REFERENCES "produtos" ("id")
+)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE  INDEX  "index_item_compras_on_compra_id" ON "item_compras"  ("compra_id")[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE  INDEX  "index_item_compras_on_produto_id" ON "item_compras"  ("produto_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210217225000"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2042325544278384540)[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (7.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (3.8ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 7]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (5.1ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:12:51.643900"], ["updated_at", "2021-02-17 23:12:51.643900"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (6.7ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (3.1ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 3]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (4.1ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:12:51.837601"], ["updated_at", "2021-02-17 23:12:51.837601"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (2.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.9ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 8]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.5ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:47:03.897793"], ["updated_at", "2021-02-17 23:47:03.897793"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (1.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (2.6ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.2ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:47:04.007762"], ["updated_at", "2021-02-17 23:47:04.007762"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (4.0ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (1.6ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (3.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (4.4ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 9]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (12.4ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:50:16.540142"], ["updated_at", "2021-02-17 23:50:16.540142"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (2.6ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (5.8ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 5]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.7ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:50:16.729313"], ["updated_at", "2021-02-17 23:50:16.729313"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (1.2ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (1.1ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduto Load (7.8ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItemCompra Load (1.4ms)[0m  [1m[34mSELECT "item_compras".* FROM "item_compras" WHERE "item_compras"."produto_id" = $1 LIMIT $2[0m  [["produto_id", 6], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (2.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.7ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 10]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.5ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:51:39.776650"], ["updated_at", "2021-02-17 23:51:39.776650"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (6.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (2.4ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 6]]
+  [1m[35m (21.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.7ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:51:39.920124"], ["updated_at", "2021-02-17 23:51:39.920124"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (0.9ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (0.8ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduto Load (0.6ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItemCompra Load (0.7ms)[0m  [1m[34mSELECT "item_compras".* FROM "item_compras" WHERE "item_compras"."produto_id" = $1 LIMIT $2[0m  [["produto_id", 7], ["LIMIT", 1]]
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (3.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (3.1ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 11]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.6ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:54:03.882913"], ["updated_at", "2021-02-17 23:54:03.882913"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (10.8ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (3.2ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.3ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:54:04.038128"], ["updated_at", "2021-02-17 23:54:04.038128"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (1.2ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (1.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCompra Load (0.9ms)[0m  [1m[34mSELECT "compras".* FROM "compras" ORDER BY "compras"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduto Load (1.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItemCompra Load (1.0ms)[0m  [1m[34mSELECT "item_compras".* FROM "item_compras" WHERE "item_compras"."compra_id" IS NULL AND "item_compras"."produto_id" = $1 LIMIT $2[0m  [["produto_id", 8], ["LIMIT", 1]]
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (2.1ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.6ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 12]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (5.0ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-17 23:56:26.354811"], ["updated_at", "2021-02-17 23:56:26.354811"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (1.9ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (2.5ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 8]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.2ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-17 23:56:26.480354"], ["updated_at", "2021-02-17 23:56:26.480354"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (0.9ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (1.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (2.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (3.7ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 13]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.8ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-18 00:03:14.300047"], ["updated_at", "2021-02-18 00:03:14.300047"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (2.5ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (3.7ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 9]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.3ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-18 00:03:14.462379"], ["updated_at", "2021-02-18 00:03:14.462379"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (0.9ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (2.0ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (3.1ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.9ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 14]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.6ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-18 00:04:20.079588"], ["updated_at", "2021-02-18 00:04:20.079588"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (2.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (3.6ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.3ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-18 00:04:20.247818"], ["updated_at", "2021-02-18 00:04:20.247818"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (6.8ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[36mFornecedor Load (0.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (2.9ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-18 00:05:31.342390"], ["updated_at", "2021-02-18 00:05:31.342390"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (4.3ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-18 00:05:46.122421"], ["updated_at", "2021-02-18 00:05:46.122421"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFornecedor Load (3.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFornecedor Load (4.6ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFornecedor Load (1.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFornecedor Load (2.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFornecedor Load (3.1ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompra Create (5.7ms)[0m  [1m[32mINSERT INTO "compras" ("fornecedor_id", "data_compra", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["fornecedor_id", 16], ["data_compra", "2021-02-18 00:10:56.668469"], ["created_at", "2021-02-18 00:10:56.786689"], ["updated_at", "2021-02-18 00:10:56.786689"]]
+  [1m[35m (34.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFornecedor Load (4.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (4.0ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 15]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (4.1ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mItemCompra Load (2.0ms)[0m  [1m[34mSELECT "item_compras".* FROM "item_compras"[0m
+  [1m[36mCompra Load (1.8ms)[0m  [1m[34mSELECT "compras".* FROM "compras"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompra Destroy (2.1ms)[0m  [1m[31mDELETE FROM "compras" WHERE "compras"."id" = $1[0m  [["id", 1]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFornecedor Load (2.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Destroy (2.2ms)[0m  [1m[31mDELETE FROM "fornecedors" WHERE "fornecedors"."id" = $1[0m  [["id", 16]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduto Load (1.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (3.0ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 11]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Destroy (1.7ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = $1[0m  [["id", 12]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Create (1.8ms)[0m  [1m[32mINSERT INTO "fornecedors" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Super Nosso"], ["created_at", "2021-02-18 00:15:14.697169"], ["updated_at", "2021-02-18 00:15:14.697169"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduto Create (1.9ms)[0m  [1m[32mINSERT INTO "produtos" ("marca", "nome", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["marca", "Tia Jú"], ["nome", "Feijão"], ["created_at", "2021-02-18 00:15:14.739017"], ["updated_at", "2021-02-18 00:15:14.739017"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFornecedor Load (1.2ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompra Create (2.1ms)[0m  [1m[32mINSERT INTO "compras" ("fornecedor_id", "data_compra", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["fornecedor_id", 17], ["data_compra", "2021-02-18 00:15:14.784850"], ["created_at", "2021-02-18 00:15:14.797397"], ["updated_at", "2021-02-18 00:15:14.797397"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCompra Load (1.0ms)[0m  [1m[34mSELECT "compras".* FROM "compras" ORDER BY "compras"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduto Load (1.1ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItemCompra Load (0.9ms)[0m  [1m[34mSELECT "item_compras".* FROM "item_compras" WHERE "item_compras"."compra_id" = $1 AND "item_compras"."produto_id" = $2 LIMIT $3[0m  [["compra_id", 2], ["produto_id", 13], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItemCompra Create (2.8ms)[0m  [1m[32mINSERT INTO "item_compras" ("compra_id", "produto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["compra_id", 2], ["produto_id", 13], ["created_at", "2021-02-18 00:15:14.905809"], ["updated_at", "2021-02-18 00:15:14.905809"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2021-02-18 21:15:48 -0300
+  [1m[35m (13.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/api-docs
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms | Allocations: 153)
+
+
+Started GET "/api-docs" for 127.0.0.1 at 2021-02-18 21:15:49 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-18 21:15:50 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-18 21:15:50 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-18 21:15:50 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-18 21:15:50 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-18 21:15:52 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-18 21:15:53 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-18 21:28:39 -0300
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-18 21:28:40 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-18 21:28:40 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-18 21:28:40 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-18 21:28:42 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-18 21:29:07 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-18 21:29:08 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-18 21:29:08 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-18 21:29:08 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-18 21:29:11 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-18 22:10:45 -0300
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-18 22:10:47 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-18 22:10:47 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-18 22:10:47 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-18 22:10:49 -0300
+Started GET "/fornecedors/1" for 127.0.0.1 at 2021-02-18 22:13:48 -0300
+Processing by FornecedorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (8.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" WHERE "fornecedors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fornecedors_controller.rb:44:in `set_fornecedor'
+Completed 404 Not Found in 128ms (ActiveRecord: 69.0ms | Allocations: 2293)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Fornecedor with 'id'=1):
+  
+app/controllers/fornecedors_controller.rb:44:in `set_fornecedor'
+Started GET "/fornecedors" for 127.0.0.1 at 2021-02-18 22:14:28 -0300
+Processing by FornecedorsController#index as */*
+  [1m[36mFornecedor Load (3.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors"[0m
+  ↳ app/controllers/fornecedors_controller.rb:8:in `index'
+Completed 200 OK in 198ms (Views: 192.9ms | ActiveRecord: 3.4ms | Allocations: 7236)
+
+
+Started GET "/fornecedors/17" for 127.0.0.1 at 2021-02-18 22:14:54 -0300
+Processing by FornecedorsController#show as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mFornecedor Load (3.9ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" WHERE "fornecedors"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/fornecedors_controller.rb:44:in `set_fornecedor'
+Completed 200 OK in 43ms (Views: 5.1ms | ActiveRecord: 3.9ms | Allocations: 812)
+
+
+  [1m[36mFornecedor Load (4.4ms)[0m  [1m[34mSELECT "fornecedors".* FROM "fornecedors" ORDER BY "fornecedors"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFornecedor Update (18.5ms)[0m  [1m[33mUPDATE "fornecedors" SET "nome_fantasia" = $1, "updated_at" = $2 WHERE "fornecedors"."id" = $3[0m  [["nome_fantasia", "qualquer coisa"], ["updated_at", "2021-02-19 01:51:53.199502"], ["id", 17]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-18 23:39:00 -0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-18 23:39:01 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-18 23:39:01 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-18 23:39:01 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-18 23:39:02 -0300
+Started GET "/" for 127.0.0.1 at 2021-02-22 20:28:46 -0300
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/api-docs
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 153)
+
+
+Started GET "/api-docs" for 127.0.0.1 at 2021-02-22 20:28:48 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 20:28:48 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 20:28:50 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 20:28:50 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 20:28:51 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-22 20:28:51 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 20:28:53 -0300
+Started GET "/" for 127.0.0.1 at 2021-02-22 20:33:35 -0300
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/api-docs
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 84)
+
+
+Started GET "/api-docs" for 127.0.0.1 at 2021-02-22 20:33:35 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 20:33:35 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 20:33:37 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 20:33:37 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 20:33:37 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-22 20:33:38 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 20:33:39 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 21:06:52 -0300
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 21:06:54 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 21:06:54 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 21:06:54 -0300
+Started GET "/api-docs/favicon-16x16.png" for 127.0.0.1 at 2021-02-22 21:06:54 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 21:06:55 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 21:56:01 -0300
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 21:56:02 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 21:56:02 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 21:56:02 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 21:56:03 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 22:54:53 -0300
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 22:54:53 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 22:54:53 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 22:54:53 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 22:54:55 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 22:55:22 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 22:55:22 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 22:55:22 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 22:55:22 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 22:55:24 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 22:56:43 -0300
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 22:56:44 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 22:56:44 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 22:56:44 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 22:56:46 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 22:57:04 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 23:07:16 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 23:07:17 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 23:07:17 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 23:07:17 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 23:07:19 -0300
+Started GET "/api-docs/index.html" for 127.0.0.1 at 2021-02-22 23:07:25 -0300
+Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2021-02-22 23:07:26 -0300
+Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2021-02-22 23:07:26 -0300
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2021-02-22 23:07:26 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 23:07:27 -0300
+Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2021-02-22 23:24:14 -0300
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rails/info/routes" for 127.0.0.1 at 2021-02-22 23:24:30 -0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering /var/lib/gems/2.7.0/gems/railties-6.0.3.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /var/lib/gems/2.7.0/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [46 times] (Duration: 374.5ms | Allocations: 5559)
+  Rendered collection of /var/lib/gems/2.7.0/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [0 times] (Duration: 0.2ms | Allocations: 3)
+  Rendered collection of /var/lib/gems/2.7.0/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [0 times] (Duration: 0.1ms | Allocations: 3)
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-6.0.3.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 35.7ms | Allocations: 887)
+  Rendered /var/lib/gems/2.7.0/gems/railties-6.0.3.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 520.5ms | Allocations: 10122)
+Completed 200 OK in 659ms (Views: 592.3ms | ActiveRecord: 0.0ms | Allocations: 11948)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-02-22 23:24:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
